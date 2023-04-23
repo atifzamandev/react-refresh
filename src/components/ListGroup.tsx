@@ -1,32 +1,52 @@
-import React, { MouseEvent, useState } from "react"
+import { useState } from "react"
+import styled from "styled-components"
 
-
-interface ListGroupProp {
-    cityList:string[],
-    heading:string, 
-    onSelectCity: (index:number, city:string)=>void
+const List = styled.ul `
+  lsit-style: none;
+  padding: 0;
+`
+interface ListItemProps{
+  active: boolean
 }
-export const ListGroup = ({cityList,heading, onSelectCity}: ListGroupProp) => {
-
+const ListItem = styled.li <ListItemProps>`
+  padding: 5px 0;
+  background: ${bgProps=>bgProps.active ? 'blue' : 'none'}
+`
+interface ListGroupProp {
+  cityList: string[]
+  heading: string
+  onSelectCity: (index: number, city: string) => void
+}
+export const ListGroup = ({
+  cityList,
+  heading,
+  onSelectCity,
+}: ListGroupProp) => {
   const [isSelected, setIsSelected] = useState(-1)
 
   return (
     <>
-    <h2>{heading}</h2>
+      <h2>{heading}</h2>
       {cityList.length === 0 && <p>No item found in the list</p>}
-      <ul className="list-group">
+      <List className="list-group">
         {cityList.map((city, index) => (
-          <li
-            className={
-                isSelected === index ? "list-group-item active" : "list-group-item"
-            }
+          <ListItem
+            // className={
+            //   isSelected === index
+            //     ? "list-group-item active"
+            //     : "list-group-item"
+            // }
+            active = {index===isSelected}
             key={city}
-            onClick={()=>{setIsSelected(index); onSelectCity(index,city)}}
+            onClick={() => {
+              setIsSelected(index)
+              onSelectCity(index, city)
+            }}
           >
             {city}
-          </li>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </>
   )
 }
