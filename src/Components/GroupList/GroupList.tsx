@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { ListGroup } from "react-bootstrap"
+import  "./GroupList.module.css"
 
 interface GroupListProps {
   items: string[]
@@ -13,7 +14,8 @@ const GroupList = ({ items, heading, onSelectItem }: GroupListProps) => {
   return (
     <>
       <h1>{heading}</h1>
-      <ListGroup>
+      {/* <ListGroup className={[styles.listGroup, styles.container].join(' ')}> */}
+      <ListGroup >
         {items.map((item, index) => (
           <ListGroup.Item
             className={selectedCity === index ? "active" : ""}
