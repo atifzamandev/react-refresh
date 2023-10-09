@@ -1,19 +1,20 @@
 import { useState } from "react"
-import AlertList from "./Components/AlertList"
-import ButtonAlert from "./Components/ButtonAlert"
-import ButtonClick from "./Components/ButtonClick"
-import GroupList from "./Components/GroupList"
-import { Button } from "react-bootstrap"
-import Message from "./Components/Message"
-import WorkObject from "./Components/WorkObject"
-import CustomerObject from "./Components/CustomerObject"
-import CountryArray from "./Components/CountryArray"
-import ProductArrayObject from "./Components/productArrayObject"
-import NavBar from "./Components/NavBar"
-import Cart from "./Components/Cart"
-import GamePlayer from "./Components/gamePlayer"
-import PizzaTypes from "./Components/PizzaTypes"
-import CartItem from "./Components/CartItem"
+// import AlertList from "./Components/AlertList"
+// import ButtonAlert from "./Components/ButtonAlert"
+// import ButtonClick from "./Components/ButtonClick"
+// import GroupList from "./Components/GroupList"
+// import { Button } from "react-bootstrap"
+// import Message from "./Components/Message"
+// import WorkObject from "./Components/WorkObject"
+// import CustomerObject from "./Components/CustomerObject"
+// import CountryArray from "./Components/CountryArray"
+// import ProductArrayObject from "./Components/productArrayObject"
+// import NavBar from "./Components/NavBar"
+// import Cart from "./Components/Cart"
+// import GamePlayer from "./Components/gamePlayer"
+// import PizzaTypes from "./Components/PizzaTypes"
+// import CartItem from "./Components/CartItem"
+import Form from "./Components/Forms/Form"
 
 function App() {
   const [showAlert, setShowAlert] = useState(false)
@@ -33,7 +34,9 @@ function App() {
   }
   return (
     <>
-    <CartItem/>
+  <Form />
+
+    {/* <CartItem/> */}
       {/* <PizzaTypes /> */}
       {/* <GamePlayer /> */}
       {/* <NavBar cartCount={cartItems.length} />

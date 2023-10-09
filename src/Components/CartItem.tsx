@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Button, ListGroup, ListGroupItem } from "react-bootstrap"
+import { Button, ListGroup } from "react-bootstrap"
 
 const CartItem = () => {
   const [cart, setCart] = useState({
